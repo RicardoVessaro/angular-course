@@ -66,3 +66,44 @@ const stringArray = insertAtBeginning(['a', 'b', 'c'], 'd');
 
 // updatedArray[0].split(''); error, infered type number.
 
+// Classes
+
+class Student {
+
+    // Declaring attributes ahead of time;
+    
+    // firstName: string;
+    // lastName: string;
+    // age: number;
+    // private courses: string [];
+
+    // constructor(first: string, last: string, age: number, courses: string[]) {
+    //      this.firstName = first;
+    //      this.lastName = last;
+    //      this.age = age;
+    //      this.courses = courses;
+    // }
+
+    // Short way
+
+    constructor(
+        firstName: string,
+        lastName: string, 
+        age: number, 
+        private courses: string[]
+    ) {}
+
+    enrol(courseName: string) {
+        this.courses.push(courseName);
+    }
+
+    listCourses() {
+        return this.courses.slice();
+    }
+}
+
+const student = new Student('Max', 'Schwarz', 32, ['Angular']);
+student.enrol('React');
+student.listCourses();
+
+// student.courses => Angular, React
