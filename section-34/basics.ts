@@ -38,6 +38,6 @@ let people: {
 
 // Type inference
 
-let course = 'React - The Complete Guide';
+let course: string | number = 'React - The Complete Guide';
 
-// course = 1234; // Error because of Type inference
+course = 1234; 
