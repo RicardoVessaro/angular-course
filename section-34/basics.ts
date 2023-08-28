@@ -34,4 +34,10 @@ person = {
 let people: {
     name: string;
     age: number;
-}[]; // Array of objects 
+}[]; // Array of objects
+
+// Type inference
+
+let course = 'React - The Complete Guide';
+
+// course = 1234; // Error because of Type inference
