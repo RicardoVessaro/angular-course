@@ -40,3 +40,15 @@ let people: Person[]; // Array of objects
 let course: string | number = 'React - The Complete Guide';
 
 course = 1234; 
+
+
+// Functions & types
+
+function add(a: number, b:number) {
+    return a + b;
+}
+
+// function print ...
+function say(value: any) {
+    console.log(value);
+}
