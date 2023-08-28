@@ -76,3 +76,18 @@ var student = new Student('Max', 'Schwarz', 32, ['Angular']);
 student.enrol('React');
 student.listCourses();
 // student.courses => Angular, React
+/*
+ Classes - Test
+    Trying to dneclare attributes ahead of time and with short constructor.
+*/
+var StudentTest = /** @class */ (function () {
+    function StudentTest(name) {
+        this.name = name;
+    }
+    StudentTest.prototype.getAge = function () { return this.age; };
+    StudentTest.prototype.setAge = function (age) { this.age = age; };
+    return StudentTest;
+}());
+var studentTest = new StudentTest('John');
+studentTest.setAge(30);
+console.log(studentTest.name, " - ", studentTest.getAge());

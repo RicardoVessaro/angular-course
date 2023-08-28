@@ -107,3 +107,25 @@ student.enrol('React');
 student.listCourses();
 
 // student.courses => Angular, React
+
+/*
+ Classes - Test
+    Trying to dneclare attributes ahead of time and with short constructor.
+*/
+
+class StudentTest {
+
+    private age: number;
+
+    constructor(public name: string) {}
+
+    getAge() { return this.age; }
+
+    setAge(age: number) { this.age = age; }
+
+}
+
+const studentTest = new StudentTest('John');
+studentTest.setAge(30);
+
+console.log(studentTest.name, " - ", studentTest.getAge());
