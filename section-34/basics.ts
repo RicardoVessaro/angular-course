@@ -129,3 +129,28 @@ const studentTest = new StudentTest('John');
 studentTest.setAge(30);
 
 console.log(studentTest.name, " - ", studentTest.getAge());
+
+// Interfaces
+
+interface Human {
+    firstName: string;
+    age: number;
+
+    greet: () => void;
+}
+
+let max: Human = {
+    firstName: 'Max',
+    age: 32,
+    greet() {
+        console.log('Hello!');
+    },
+}
+
+class Instructor implements Human {
+    firstName: string;
+    age: number;
+    greet() {
+        console.log('Hello!!!!');
+    }
+}
