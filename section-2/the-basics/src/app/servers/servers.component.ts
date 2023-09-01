@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-servers',
+  selector: 
+    // '[app-servers]',
+    // '.app-servers',
+    'app-servers',
   // templateUrl: './servers.component.html',
   template: `
     <app-server></app-server>
