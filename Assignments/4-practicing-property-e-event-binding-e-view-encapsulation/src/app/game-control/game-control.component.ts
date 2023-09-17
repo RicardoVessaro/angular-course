@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-game-control',
