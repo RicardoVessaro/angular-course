@@ -2,17 +2,52 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <!-- Add a Form with the following Inputs (and Validators)
-           1) Mail address (should not be empty and should be an email address)
+           1) Mail address (should not be empty and should be an email address) - OK
            2) A Dropdown which allows the user to select from three different Subscriptions ("Basic", "Advanced", "Pro")
-              Set "Advanced" as Default
-           3) A Password field (should not be empty)
-           4) A Submit Button
+              Set "Advanced" as Default - OK
+           3) A Password field (should not be empty) - OK 
+           4) A Submit Button - OK 
 
-           Display a warning message if the Form is invalid AND was touched. Display a warning message below each input if it's invalid.
+           Display a warning message if the Form is invalid AND was touched. Display a warning message below each input if it's invalid. - OK
 
-           Upon submitting the form, you should simply print the Value of the Form to the Console.
-           Optionally, display it in your template.
+           Upon submitting the form, you should simply print the Value of the Form to the Console. - OK
+           Optionally, display it in your template. - OK
       -->
+      <div>
+        <form (ngSubmit)="onSubmit()" #f="ngForm">
+          <div class="row">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" ngModel #email="ngModel" required email>
+            <p *ngIf="!email.valid && email.touched">The E-mail is invalid.</p>
+          </div>
+
+          <div class="row">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" ngModel #password="ngModel" required>
+            <p *ngIf="!password.valid && password.touched">The Password is invalid.</p>
+          </div>
+
+          <div class="row">
+            <select name="level" [ngModel]="'advanced'">
+              <option value="basic">Basic</option>
+              <option value="advanced">Advanced</option>
+              <option value="pro">Pro</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <p *ngIf="!f.valid && f.touched">The Form is invalid.</p>
+            <button type="submit" [disabled]="!f.valid">Submit</button>
+          </div>
+        </form>
+        <div *ngIf="submitted">
+          <hr>
+          <h3>Submitted Values</h3>
+          <p>E-mail: {{ appValue.email }}</p>
+          <p>Password: {{ appValue.password }}</p>
+          <p>Level: {{ appValue.level }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
