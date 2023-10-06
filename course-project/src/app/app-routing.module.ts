@@ -9,11 +9,11 @@ import { RecipeResolverService } from "./recipes/recipes-resolver.service";
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/recipes', pathMatch: 'full' },
-    { path: 'recipes', component: RecipesComponent, children: [
+    { path: 'recipes', component: RecipesComponent, resolve: {recipes: RecipeResolverService.fetchRecipes}, children: [
         { path: '', component: RecipesStartComponent },
         { path: 'new', component: RecipeEditComponent },
-        { path: ':id', component: RecipeDetailComponent, resolve: [RecipeResolverService]},
-        { path: ':id/edit', component: RecipeEditComponent, resolve: [RecipeResolverService] }
+        { path: ':id', component: RecipeDetailComponent },
+        { path: ':id/edit', component: RecipeEditComponent }
     ] },
     { path: 'shopping-list', component: ShoppingListComponent }
 ]
