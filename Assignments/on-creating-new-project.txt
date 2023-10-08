@@ -1,0 +1,13 @@
+Run the following commnads:
+
+> ng new <assignment-name> --no-strict
+
+Go to the new project directory
+
+> npm install --save bootstrap@3 
+
+> npm install --save rxjs
+
+> npm install --save rxjs-compat
+
+Add the bootstrap folder in angular.json file
