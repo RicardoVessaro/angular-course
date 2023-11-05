@@ -128,4 +128,12 @@ export class AppComponent {
       }
       this.list = updatedList;
     }
+
+    animationStarted(event) {
+      console.log(event);
+    }
+
+    animationEnded(event) {
+      console.log(event);
+    }
 }
