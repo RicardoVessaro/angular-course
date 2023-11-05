@@ -39,6 +39,13 @@ import { Component } from '@angular/core';
           borderRadius: '50px'
         })),
         animate(500)
+      ]),
+      trigger('list1', [
+        state('in', style({
+          opacity: 1,
+          transform: 'translatex(0)'
+        })),
+        transition('=> in', animate(300))
       ])
     ])
   ]
